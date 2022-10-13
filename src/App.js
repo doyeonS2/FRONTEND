@@ -22,9 +22,14 @@ import './App.css';
 // }
 
 function App() {
-  const element = <WelcomeProp name="곰돌쓰" jobs="리액트 개발"/>
+  // const element = <WelcomeProp name="곰돌쓰" jobs="리액트 개발"/>
   return (
-    <div>{element}</div>
+    // <div>{element}</div>
+    <div>
+      <WelcomeProp name="김재환" job="가수"/>
+      <WelcomeProp name="옹성우" job="가수 겸 배우"/>
+      <WelcomeProp name="배진영" job="아이돌"/>
+    </div>
   );
 }
 
