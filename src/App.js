@@ -1,5 +1,6 @@
 import WelcomeProp from './1013_JSX/WelcomeProp';
 import './App.css';
+import Comment from './1013_JSX/Comment';
 
 // function App() {
 //   const name = "도라에몽";
@@ -21,17 +22,31 @@ import './App.css';
   // );
 // }
 
+const comment = {
+  date : new Date(),
+  text : "I hope you enjoy learning React!",
+  author : {
+    name : "Hello Kitty",
+    avatarUrl : "http://placekitten.com/g/64/64"
+  }
+}
+
 function App() {
   // const element = <WelcomeProp name="곰돌쓰" jobs="리액트 개발"/>
   return (
     // <div>{element}</div>
-    <div>
-      <WelcomeProp name="김재환" job="가수" color="royalBlue" font="1.5em">❤_❤</WelcomeProp>
-      <WelcomeProp name="옹성우" job="가수 겸 배우" color="orange" font="1.8em">❤0❤</WelcomeProp>
-      <WelcomeProp name="배진영" job="아이돌" color="green" font="2.1em">😊</WelcomeProp>
-      <WelcomeProp />
-      
-    </div>
+    // <div>
+    //   <WelcomeProp name="김재환" job="가수" color="royalBlue" font="1.5em">❤_❤</WelcomeProp>
+    //   <WelcomeProp name="옹성우" job="가수 겸 배우" color="orange" font="1.8em">❤0❤</WelcomeProp>
+    //   <WelcomeProp name="배진영" job="아이돌" color="green" font="2.1em">😊</WelcomeProp>
+    //   <WelcomeProp />
+    // </div>
+
+    <Comment
+    date={comment.date}
+    text={comment.text}
+    author={comment.author} />
+
   );
 }
 
