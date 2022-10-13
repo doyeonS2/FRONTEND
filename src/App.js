@@ -26,9 +26,11 @@ function App() {
   return (
     // <div>{element}</div>
     <div>
-      <WelcomeProp name="김재환" job="가수"/>
-      <WelcomeProp name="옹성우" job="가수 겸 배우"/>
-      <WelcomeProp name="배진영" job="아이돌"/>
+      <WelcomeProp name="김재환" job="가수" color="royalBlue" font="1.5em">❤_❤</WelcomeProp>
+      <WelcomeProp name="옹성우" job="가수 겸 배우" color="orange" font="1.8em">❤0❤</WelcomeProp>
+      <WelcomeProp name="배진영" job="아이돌" color="green" font="2.1em">😊</WelcomeProp>
+      <WelcomeProp />
+      
     </div>
   );
 }
