@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +35,23 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.title-name {
+  color: royalblue;
+  font-size: 2em;
+  background-color: pink;
+  font-weight: bold;
+}
+
+.name-card {
+  background-color: mistyrose;
+  color: royalblue;
+  font-weight: bold;
+  display: inline;
+  padding: 10px 20px 10px 20px;
+}
+
+.txt {
+  padding: 0 20px 0 50px;
 }
