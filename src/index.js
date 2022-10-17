@@ -11,13 +11,15 @@ import EventInput from './1017_ex/InputEx';
 import Event from './1017_ex/Event';
 import Event2 from './1017_ex/Event2';
 import Event3 from './1017_ex/Event3';
+import ArrayList from './1017_ex/ArrayList';
+import ArrayMap from './1017_ex/ArrayMap';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* 닫힘 태그가 없으면 에러나기 때문에 <SampleJSX/>로 쓴다. 열림 태그는 없어도 닫힘 태그는 있어야 함! */}
-    <Event />
+    <ArrayMap />
   </React.StrictMode>
 );
 
