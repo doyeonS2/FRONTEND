@@ -1,0 +1,41 @@
+@import './styles/utils.scss';
+
+.SassComponent {
+    display: flex;
+    .box {
+        background: red;
+        cursor: pointer; // 마우스 올리면 화살표가 손가락 모양으로 바뀌는 것
+        transition: all 0.3s ease-in; // 전환 효과
+        &.red { // & : 부모가 가진 특성을 내려받음(부모와 내부 속성을 연결)
+            background: $red;
+            @include square(1); // 32 x 32
+        }
+        &.orange { 
+            background: $orange;
+            @include square(2); // 64 x 64
+        }
+        &.yellow { 
+            background: $yellow;
+            @include square(3); 
+        }
+        &.green { 
+            background: $green;
+            @include square(4); 
+        }
+        &.blue { 
+            background: $blue;
+            @include square(5); 
+        }
+        &.indigo { 
+            background: $indigo;
+            @include square(6); 
+        }
+        &.violet { 
+            background: $violet;
+            @include square(7); 
+        &:hover {
+            background: black;
+        }
+        }
+    }
+}
