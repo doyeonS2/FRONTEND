@@ -15,13 +15,18 @@ import ArrayList from './1017_ex/ArrayList';
 import ArrayMap from './1017_ex/ArrayMap';
 import ArrayMap2 from './1017_ex/ArrayMap2';
 import NameCard from './1017_ex/NameCard';
+import Info from './1018_hook/Effect.js';
+import Reducer from './1018_hook/Reducer';
+import Memo from './1018_hook/Memo';
+import Callback from './1018_hook/Callback';
+import Ref from './1018_hook/Ref';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* 닫힘 태그가 없으면 에러나기 때문에 <SampleJSX/>로 쓴다. 열림 태그는 없어도 닫힘 태그는 있어야 함! */}
-    <NameCard />
+    <Ref />
   </React.StrictMode>
 );
 
