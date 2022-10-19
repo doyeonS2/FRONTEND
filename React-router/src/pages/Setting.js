@@ -8,6 +8,6 @@ const Setting = () => {
             <Link to="/">홈으로 이동</Link><br />
             <Link to="/about">소개</Link>
         </div>
-    )
+    );
 }
 export default Setting;
