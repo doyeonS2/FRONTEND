@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "hfjhf",
+      "pwd": "ghfgj",
+      "name": "k",
+      "addr": "hkfh",
+      "mail": "fhk",
+      "phone": "kfh"
+    },
+    {
+      "id": "doyeon2",
+      "pwd": "asgagd",
+      "name": "김도연",
+      "addr": "경기도 용인시",
+      "mail": "14sfgh@naver.com",
+      "phone": "010-1234-5678"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
