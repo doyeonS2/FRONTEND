@@ -59,12 +59,11 @@ const Categories = ({onSelect, category}) => {
             {categories.map(c=>(
                 <Category 
                     key={c.name}
-                    active={category===c.name}
+                    active={category===c.name}  
                     onClick={()=>onSelect(c.name)}
                 >{c.text}</Category>
             ))}
         </CategoriesBlock>
     );
 };
-
 export default Categories;
