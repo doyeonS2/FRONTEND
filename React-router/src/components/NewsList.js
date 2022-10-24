@@ -30,9 +30,9 @@ const NewsList = (props) => {
                 // 백틱도 문자열이 들어가는 것
                 // all이면 유지, all이 아니면 category선택됨
                 // nav가 눌러지면 nav바에 대한 값을 props.categories로 불러옴
-                const query = props.category === "all" ? "" : `category=${props.category}`;
+                const query = props.category === "all" ? "all" : `category=${props.category}`;
                 const response = await axios.get(
-                 `https://newsapi.org/v2/top-headlines?country=kr&${query}apiKey=ffbbc82f694941a7b0e2d4f4515abcc7`
+                 `https://newsapi.org/v2/top-headlines?country=kr&${query}&apiKey=ffbbc82f694941a7b0e2d4f4515abcc7`
                 );
                 setArticles(response.data.articles); // 동기처럼 보이지만 비동기로 결과를 받음,  화면이 랜더링 됨
             } catch (e) { // 서버 요청이 실패함
