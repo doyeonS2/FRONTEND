@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext } from 'react';
+import React, {useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './App.css';
 import imgLogo from './images/tier_logo.png'
@@ -50,7 +50,6 @@ const Login = () => {
         }
     }
     const onChangePw = (e) => {
-        //const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
         const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
         const passwordCurrent = e.target.value ;
         setInputPw(passwordCurrent)
@@ -63,19 +62,25 @@ const Login = () => {
         }        
     }
     const onClickLogin = async() => {
-        // let result = await KhApi.userLogin(inputId, inputPw);
-        // console.log(result.data);
-        // if (result.data.Code === "00") {
-        //     console.log("정상적으로 로그인 되었습니다. 메인으로 이동 합니다.")
-        //     window.localStorage.setItem("userId", inputId);
-        //     window.localStorage.setItem("userPw", inputPw);
-        //     window.location.replace("/home");
+        try {
+            // 로그인을 위한 axios 호출
+            const res = await KhApi.userLogin(inputId, inputPw);
+            console.log(res.data);
+            console.log(res.status);
+            console.log(res.data.result);
 
-        // } else {
-        //     console.log("아이디 및 패스워드를 재확인해 주세요.")
-        //     setModalOpen(true);
-        // }
-        window.location.replace("/home");
+            if(res.data.result === "OK") {
+                window.localStorage.setItem("userId", inputId);
+                window.localStorage.setItem("userPw", inputPw);
+                window.location.replace("/home");
+            } else {
+                setModalOpen(true);
+            }
+            
+        } catch (e) {
+            setModalOpen(true);
+            console.log("로그인 에러..");
+        }
     }
 
     return (
@@ -112,7 +117,7 @@ const Login = () => {
                     <Modal open={modalOpen} close={closeModal} header="오류">아이디 및 패스워드를 재확인해 주세요.</Modal>
                 </div>
                 <div className="signup">
-                    <Link to="/SignupS1" className="link_style">
+                    <Link to="/Signup" className="link_style">
                         <span>Sign Up</span>
                     </Link>
                 </div>

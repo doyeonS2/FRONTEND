@@ -9,16 +9,21 @@ const SignupS1 = () =>{
     const [inputId, setInputId] = useState("");
     const [inputPw, setInputPw] = useState("");
     const [inputConPw, setInputConPw] = useState("");
+    const [inputName, setInputName] = useState("");
+    const [inputEmail, setInputEmail] = useState("");
 
     // 오류 메시지
     const [idMessage, setIdMessage] = useState("");
     const [pwMessage, setPwMessage] = useState("");
     const [conPwMessage, setConPwMessage] = useState("");
+    const [mailMessage, setMailMessage] = useState("");
 
     // 유효성 검사
-    const [isId, setIsId] = useState("");
-    const [isPw, setIsPw] = useState("");
-    const [isConPw, setIsConPw] = useState("");
+    const [isId, setIsId] = useState(false);
+    const [isPw, setIsPw] = useState(false)
+    const [isConPw, setIsConPw] = useState(false);
+    const [isName, setIsName] = useState(false);
+    const [isMail, setIsMail] = useState(false);
     // 팝업
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -40,7 +45,7 @@ const SignupS1 = () =>{
         //const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
         const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
         const passwordCurrent = e.target.value ;
-        setInputPw(passwordCurrent)
+        setInputPw(passwordCurrent);
         if (!passwordRegex.test(passwordCurrent)) {
             setPwMessage('숫자+영문자 조합으로 8자리 이상 입력해주세요!')
             setIsPw(false)
@@ -61,13 +66,29 @@ const SignupS1 = () =>{
             setIsConPw(true);
         }      
     }
+
+    const onChangeName = (e) => {
+        setInputName(e.target.value);
+        setIsName(true);
+    }
+
+    const onChangeMail = (e) => {
+        setInputEmail(e.target.value);
+        setIsMail(true);
+    }
+
     const onClickLogin = async() => {
         console.log("Click 회원가입");
-        //let result = await EnnovaApi.userInfoCheckId(inputId);
-        let result = await KhApi.userLogin(inputId, 1234);
-        if (result.data.Code === "00") {
+        // 가입 여부 우선 확인
+        const res = await KhApi.memberRegCheck(inputId);
+        console.log(res.data.result);
+        // 가입 여부 확인 후 가입 절차 진행
+
+        if (res.data.result === "OK") {
             console.log("가입된 아이디가 없습니다. 다음 단계 진행 합니다.")
-            window.location.replace("/SignupS2");
+            //window.location.replace("/SignupS2");
+            
+
         } else {
             console.log("아이디 및 패스워드를 재확인해 주세요.")
             setModalOpen(true);
@@ -91,22 +112,28 @@ const SignupS1 = () =>{
                     {inputId.length > 0 && <span className={`message ${isId ? 'success' : 'error'}`}>{idMessage}</span>}
             </div>
             <div className="item2">
-                <input className="input" placeholder="패스워드" value ={inputPw} onChange={onChangePw}/>
+                <input className="input" type="password" placeholder="패스워드" value ={inputPw} onChange={onChangePw}/>
             </div>
             <div className="hint">
                     {inputPw.length > 0 && (
                     <span className={`message ${isPw ? 'success' : 'error'}`}>{pwMessage}</span>)}
             </div>
             <div className="item2">
-                <input className="input" placeholder="패스워드 확인" value ={inputConPw} onChange={onChangeConPw}/>
+                <input className="input" type="password" placeholder="패스워드 확인" value ={inputConPw} onChange={onChangeConPw}/>
             </div>
             <div className="hint">
                     {inputPw.length > 0 && (
                     <span className={`message ${isConPw ? 'success' : 'error'}`}>{conPwMessage}</span>)}
             </div>
+            <div className="item2">
+                <input className="input" type="text" placeholder="이름" value ={inputName} onChange={onChangeName}/>
+            </div>
+            <div className="item2">
+                <input className="input" type="email" placeholder="이메일" value ={inputEmail} onChange={onChangeMail}/>
+            </div>
 
             <div className="item2">
-                {(isId && isPw && isConPw) ? 
+                {(isId && isPw && isConPw && isName && isMail) ? 
                 <button className="enable_button" onClick={onClickLogin}>NEXT</button> :
                 <button className="disable_button" onClick={onClickLogin}>NEXT</button>}
                 <Modal open={modalOpen} close={closeModal} header="오류">중복된 아이디 입니다.</Modal>

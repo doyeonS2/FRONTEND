@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from 'react';
 import alarmGo from '../images/bell.png'
 import receiptGo from '../images/receipt.png'
 import nowGo from '../images/short_cut.png'
 import logoWhite from '../images/tier_logo_white.png'
 import imgPhone from '../images/ned_phone.png'
 import qrPay from '../images/qr_button_black.png'
-import { Link } from "react-router-dom";
 
 const GoHome = () => {
     
@@ -17,9 +15,9 @@ const GoHome = () => {
         window.location.replace("/GoEFT");
     }
 
-    const onClickATM = () => {
-        console.log("ATM으로 이동");
-        window.location.replace("/GoATM");
+    const onClickMemberReg = () => {
+        console.log("회원 가입으로 이동");
+        window.location.replace("/Signup");
     }
 
     const onClickPeer = () => {
@@ -31,10 +29,10 @@ const GoHome = () => {
         console.log("QRpay로 이동");
     }
 
-    const onClickHistory = () => {
-        console.log("History로 이동");
+    const onClickMember = () => {
+        console.log("회원정보로 이동");
+        window.location.replace("/MemberInfo");
     }
-
 
     return(
         <div>
@@ -52,13 +50,13 @@ const GoHome = () => {
                         <span className="linkwallet1">There is no wallet connected.</span>
                         <span className="linkwallet2">+ Add Wallet</span>
                 </div>
-                <div className="EFT" onClick={onClickEFT}>
+                <div className="EFT" onClick={onClickMember}>
                     <img src={nowGo} className="imgEFT" alt="GoEFT" />
-                    <span className="EFTtypo">EFT</span>
+                    <span className="EFTtypo">회원정보 조회</span>
                 </div>
-                <div className="ATM" onClick={onClickATM}>
-                    <img src={receiptGo} className="imgATM" alt="GoATM" />
-                    <span className="ATMtypo">ATM</span>
+                <div className="ATM" onClick={onClickMemberReg}>
+                    <img src={receiptGo} className="imgATM" alt="onClickMemberReg" />
+                    <span className="ATMtypo">회원추가 기능(회원가입)</span>
                 </div>
                 <div className="Peer" onClick={onClickPeer}>
                     <img src={nowGo} className="imgPeer" alt="GoPeer" />
@@ -69,8 +67,8 @@ const GoHome = () => {
                     <span className="QRtypo">QR PAYMENT</span>
                 </div>
                 <div className="history" >
-                    <span className="historytypo">HISTORY</span>
-                    <div className="historyinfo" onClick={onClickHistory}>
+                    <span className="historytypo">회원정보조회</span>
+                    <div className="historyinfo" onClick={onClickMember}>
                         <span className="historyinfotypo">No history</span>
                     </div>
                 </div>
