@@ -1,6 +1,6 @@
 import axios from "axios";
 const HEADER = 'application/json';
-const KH_DOMAIN = "http://localhost:8111/jdbc_test/";
+const KH_DOMAIN = "http://localhost:8100/kh_first_ex/";
 
 const KhApi = {
     // 로그인 기능
@@ -24,9 +24,9 @@ const KhApi = {
             id: id,
             pwd: pwd,
             name: name,
-            phone: mail
+            mail: mail
         };
-        return await axios.post(KH_DOMAIN+"memberReg", memberObj, HEADER);
+        return await axios.post(KH_DOMAIN + "memberReg", memberObj, HEADER);
     },
     // 회원 가입 여부 확인
     memberRegCheck: async function(id) {

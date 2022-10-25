@@ -26,6 +26,7 @@ const SignupS1 = () =>{
     const [isMail, setIsMail] = useState(false);
     // 팝업
     const [modalOpen, setModalOpen] = useState(false);
+    const [modalText, setModelText] = useState("중복된 아이디 입니다.");
 
     const closeModal = () => {
         setModalOpen(false);
@@ -80,18 +81,25 @@ const SignupS1 = () =>{
     const onClickLogin = async() => {
         console.log("Click 회원가입");
         // 가입 여부 우선 확인
-        const res = await KhApi.memberRegCheck(inputId);
-        console.log(res.data.result);
+        const memberCheck = await KhApi.memberRegCheck(inputId);
+        console.log(memberCheck.data.result);
         // 가입 여부 확인 후 가입 절차 진행
 
-        if (res.data.result === "OK") {
-            console.log("가입된 아이디가 없습니다. 다음 단계 진행 합니다.")
-            //window.location.replace("/SignupS2");
-            
+        if (memberCheck.data.result === "OK") {
+            console.log("가입된 아이디가 없습니다. 다음 단계 진행 합니다.");
+            const memberReg = await KhApi.memberReg(inputId, inputPw, inputName, inputEmail);
+            console.log(memberReg.data.result);
+            if(memberReg.data.result === "OK") {
+                window.location.replace("/");
+            } else {
+                setModalOpen(true);
+                setModelText("회원 가입에 실패 했습니다.");
+            }
 
         } else {
-            console.log("아이디 및 패스워드를 재확인해 주세요.")
+            console.log("이미 가입된 회원 입니다.")
             setModalOpen(true);
+            setModelText("이미 가입된 회원 입니다.");
         } 
     }
 
@@ -136,7 +144,7 @@ const SignupS1 = () =>{
                 {(isId && isPw && isConPw && isName && isMail) ? 
                 <button className="enable_button" onClick={onClickLogin}>NEXT</button> :
                 <button className="disable_button" onClick={onClickLogin}>NEXT</button>}
-                <Modal open={modalOpen} close={closeModal} header="오류">중복된 아이디 입니다.</Modal>
+                <Modal open={modalOpen} close={closeModal} header="오류">{modalText}</Modal>
             </div>
         </div>
     </div>

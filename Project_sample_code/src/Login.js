@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import './App.css';
 import imgLogo from './images/tier_logo.png'
@@ -7,6 +7,7 @@ import KhApi from './api/khApi';
 import Modal from './util/Modal.js';
 
 const Login = () => {
+
     // 키보드 입력
     const [inputId, setInputId] = useState("");
     const [inputPw, setInputPw] = useState("");
@@ -65,10 +66,8 @@ const Login = () => {
         try {
             // 로그인을 위한 axios 호출
             const res = await KhApi.userLogin(inputId, inputPw);
-            console.log(res.data);
-            console.log(res.status);
             console.log(res.data.result);
-
+           
             if(res.data.result === "OK") {
                 window.localStorage.setItem("userId", inputId);
                 window.localStorage.setItem("userPw", inputPw);

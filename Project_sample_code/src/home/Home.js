@@ -6,6 +6,9 @@ import imgPhone from '../images/ned_phone.png'
 import qrPay from '../images/qr_button_black.png'
 
 const GoHome = () => {
+
+    const localId = window.localStorage.getItem("userId");
+    const localPw = window.localStorage.getItem("userPw");
     
     const onClickWallet = async() => {
     }
@@ -67,10 +70,8 @@ const GoHome = () => {
                     <span className="QRtypo">QR PAYMENT</span>
                 </div>
                 <div className="history" >
-                    <span className="historytypo">회원정보조회</span>
-                    <div className="historyinfo" onClick={onClickMember}>
-                        <span className="historyinfotypo">No history</span>
-                    </div>
+                   <p>회원 아이디 : {localId}</p>
+                   <p>회원 패스워드 : {localPw}</p>
                 </div>
             </div>
         </div>
