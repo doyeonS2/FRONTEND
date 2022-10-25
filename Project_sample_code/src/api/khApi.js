@@ -1,6 +1,6 @@
 import axios from "axios";
 const HEADER = 'application/json';
-const KH_DOMAIN = "http://localhost:8100/kh_first_ex/";
+const KH_DOMAIN = "http://localhost:8090/kh_mini_ex/";
 
 const KhApi = {
     // 로그인 기능
