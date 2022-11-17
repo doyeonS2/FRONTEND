@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>form 태그 선택하기</title>
+</head>
+<body>
+    <form name="frm">
+        <select name="opt">
+            <option value="apple">사과</option>
+            <option value="banana">바나나</option>
+            <option value="orange">오렌지</option>
+            <option value="melon">멜론</option>
+        </select>
+    </form>
+    <script>
+        const selEls = document.querySelectorAll("option");
+        for(let i = 0; i < selEls.length; i++) {
+            // 오렌지가 디폴트로 선택되어 있게 해줌
+            if(selEls[i].value == "orange") {
+                selEls[i].selected = true;
+            }
+        }
+    </script>
+</body>
+</html>

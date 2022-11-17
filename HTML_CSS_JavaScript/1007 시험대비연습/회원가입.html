@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입 페이지 만들기</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+
+        #container {
+            margin: 70px auto;
+            padding: 40px 30px 04px 30px;
+            width: 650px;
+            background-color: snow;
+         }
+        
+        #over {
+            width:100px;
+            height: 35px;  
+        }
+        
+        #auth {
+            border-color: floralwhite;
+        }
+        
+        #auth1 {
+            width: 300px;
+            height: 35px;
+        }
+    
+        
+        #auth2, #auth3 {
+            width:100px;
+            height: 35px;
+        
+        }
+        span {
+            margin-top: 50px;
+        }
+
+
+        input{
+            border: 1px solid black;
+            border-radius: 3px;
+            line-height: 35px;
+            font-size: 12px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        h1 {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .heart {
+            color: red;
+        }
+
+        div {
+            padding-top: 3px;
+            padding-bottom: 8px;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .id input, .pw input {
+            width: 300px;
+            height: 35px;
+        }
+
+        .pwCheck input {
+            width: 298px;
+            height: 35px;
+        }
+
+        .email input {
+            width: 135px;
+            height: 35px;
+        }
+
+        .phone {
+            display: flex;
+            line-height: 35px;
+
+        }
+
+        #num1,#num2, #num3 {
+            width: 78px;
+            height: 35px;
+        }
+        
+        button {
+            color: gray;
+            background-color: lightgray;
+        }
+
+        .signUp button {
+            width: 400px;
+            height: 80px;
+            cursor:pointer;
+            margin: 10px 30px 10px 100px;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-size: large;
+            border-radius: 5px;
+        }
+
+        select.box {
+          width: 150px;
+          height: 35px;
+          box-sizing: border-box;
+          margin-left: 5px;
+          padding: 5px 0 5px 10px;
+          border-radius: 4px;
+          border: 1px solid #d9d6d6;
+          color: #383838;
+          background-color: #ffffff;
+          font-family: 'Montserrat', 'Pretendard', sans-serif;
+        }
+
+        option {
+          font-size: 16px;
+        }
+
+        .info .box#domain-list option {
+          font-size: 14px;
+          background-color: #ffffff;
+        }
+        
+        .star {
+            color: red;
+        }
+        
+        .op {
+            color: gray;
+        
+        }
+        
+        .last {
+            text-align: center;
+
+        }
+        
+        .login {
+            color: blue;
+        }
+
+        .check {
+            display: flex;
+            text-align: center;
+        }
+        
+
+    </style>
+    </head>
+    <body>
+        <form action="#">
+            <fieldset id="container">
+                    <div class="title"><h1 style="font-size: 50px;">JOIN US</h1>
+                        <p style="font-size: 12.5px;"><b class="heart">♥</b>도연마켓의 회원이 되시면 다양한 혜택이 주어집니다.<b class="heart">♥</b></p><hr>
+                    </div>
+                    <div class="id"><b class="star">* </b>아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="id" type="text" onblur="check_id()">&nbsp;&nbsp;<button disabled id="over">중복 확인</button><p style="color: red;" id="idMsg"></p>
+                    </div>
+                    <div class="pw"><b class="star" >* </b>비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="pw" type="password" placeholder="(영문 소문자, 숫자, 특수문자 포함 8 ~ 15자)" onblur="check_pw1()"><p style="color: red;" id="pwMsg1"></p>
+                    </div>
+                    <div class="pwCheck"><b class="star">* </b>비밀번호 확인&nbsp;
+                        <input id="pwCheck" type="password" onblur="check_pw2()"><p class="check" style="color: red;" id="pwMsg2"></p>
+
+                    </div>
+                    <div class="email"><span class="op">(선택) </span>이메일&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="email" type="text"> @ <input class="box" id="domain-txt" type="text" placeholder="(직접 입력)">
+                        <select class="box" id="domain-list">
+                          <option value="type">직접 입력</option>
+                          <option value="naver.com">naver.com</option>
+                          <option value="google.com">google.com</option>
+                          <option value="hanmail.net">hanmail.net</option>
+                          <option value="nate.com">nate.com</option>
+                          <option value="kakao.com">kakao.com</option>
+                        </select>
+                    </div> 
+                    <fieldset id="auth">
+                    <div class="phone"><b class="star">* </b>&nbsp;전화번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="num1" type="text" size="1" maxlength="3" oninput="numChange1()" onblur="check_num()">&nbsp;ㅡ &nbsp;
+                        <input id="num2" type="text" size="3" maxlength="4" oninput="numChange2()" onblur="check_num()">&nbsp;ㅡ &nbsp;
+                        <input id="num3" type="text" size="3" maxlength="4" oninput="numChange3()" onblur="check_num()">&nbsp;&nbsp;&nbsp;
+                        <button disabled id="auth3" onclick="getToken()">인증번호 전송</button>
+                        <p style="color: red;" id="numMsg"></p>
+                    </div>
+                       <div>&nbsp;&nbsp;&nbsp;인증번호&nbsp;&nbsp;&nbsp;&nbsp;
+                           <input id="auth1" type="text" placeholder="숫자 6자리 입력" onclick="auth_start" onblur="check_num2()">&nbsp;&nbsp;
+                            <button disabled id="auth2" onclick="checkCompletion()">확인</button>
+                            <p style="color: red;" id="numMsg2"></p>
+                        </div></fieldset>
+                    <div class="line">
+                        <hr>
+                    </div>
+                    <div class="signUp">
+                        <button id="signUpButton" disabled onclick="signUpCheck()">가입하기</button><br>
+                        <p class="last">이미 아이디가 있으신가요? <span class="login"><U>> 로그인</U></span> </p>  
+                    </div>
+            </fieldset>
+        </form>
+        
+      
+
+        <script>
+            
+
+            // 이메일 주소 부분
+            const domainListEl = document.querySelector('#domain-list')
+            const domainInputEl = document.querySelector('#domain-txt')
+
+            domainListEl.addEventListener('change', (event) => {
+              if(event.target.value !== "type") {
+                domainInputEl.value = event.target.value
+                domainInputEl.disabled = true
+              } else { 
+                domainInputEl.value = ""
+                domainInputEl.disabled = false
+              }
+            })
+            
+            // 빈칸 확인
+            function check_id() {
+                if(id.value == '') {
+                    idMsg.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>> &nbsp;아이디를 입력해주세요."
+                } else idMsg.style.display = 'none';
+            }
+            
+            function check_pw1() {
+                if(pw.value == '') {
+                    pwMsg1.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>> &nbsp;비밀번호를 입력해주세요."
+                } else pwMsg1.style.display = 'none';
+            }
+            
+             function check_pw2() {
+                if(pwCheck.value == '') {
+                    pwMsg2.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>> &nbsp;비밀번호를 확인해주세요."
+                } else pwMsg2.style.display = 'none';
+            }
+            
+              function check_num() {
+                if(num1.value == '' || num2.value == '' || num3.value == '') {
+                    numMsg.innerHTML = "&nbsp;&nbsp;&nbsp;<br> >> &nbsp;전화번호를&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 입력해주세요."
+                } else numMsg.style.display = 'none';
+            }
+            
+             function check_num2() {
+                if(auth1.value == '') {
+                    numMsg2.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>> &nbsp;비밀번호를 확인해주세요."
+                } else numMsg2.style.display = 'none';
+            }
+
+
+        </script>
+
+    </body>
+
+    </html>

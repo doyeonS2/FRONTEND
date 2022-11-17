@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="animation2.css">
+</head>
+<body>
+    <div>
+        <button id="start">고고싱~!</button>
+        <button id="paused">그만행ㅜ.ㅜ </button>
+        <script>
+            const box = document.querySelector("div");
+            document.getElementById("start").addEventListener("click", function() {
+                box.style.animationPlayState = "running";
+            });
+            document.getElementById("paused").addEventListener("click", function() {
+                box.style.animationPlayState = "paused";
+            });
+        </script>
+    </div>
+</body>
+</html>

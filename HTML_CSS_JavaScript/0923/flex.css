@@ -1,0 +1,89 @@
+* {
+    width: 500px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+div {
+    font-size: 1.6em;
+}
+
+.flex-header-container {
+    width: 100vw;
+    height: calc(100vh - 160px);
+    border: 2px solid grayo;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.flex-header-item-left {
+    flex-grow: 3;
+    background-color: aquamarine;
+}
+
+.flex-header-item-center {
+    flex-grow: 4;
+    background-color: lightpink;
+}
+
+.flex-header-item-right {
+    flex-grow: 3;
+    background-color: lightskyblue;
+}
+
+.flex-container {
+    width: 100vw;
+    height: calc(100vh - 160px);
+    background-color: bisque;
+    border: 2px solid grayo;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: row-reverse 가로-거꾸로;
+    flex-direction: column 세로;
+    flex-direction: column-reverse; 세로-거꾸로 */
+    flex-wrap: wrap;
+    /* flex-wrap: nowrap; 줄바꿈 안하고 유지하고 싶을 때 */
+    justify-content: center; /* 중앙 정렬 */
+    /* justify-content: space-between; 아이템과 아이템 사이를 균일하게 정렬 */
+    /* justify-content: space-around; 주축 기준으로 균등하게 정렬 */
+    /* justify-content: space-evenly; 일정하게 정렬 */
+    align-items: stretch;
+}
+
+.flex-item {
+    width: 100px;
+    /* height: 50px; */
+    margin: 2px;
+    border: 2px solid salmon;
+    color: white;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    height: 100px;
+    /* background-color: plum; */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    height: 100;
+    background-color: lightsalmon;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.flex-item:nth-child(2n) {
+    background-color: orangered;
+    flex-grow: 1;
+}
+
+.flex-item:nth-child(1) {
+    flex-grow: 3;
+}

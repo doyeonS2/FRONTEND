@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            border : 2px solid royalblue;
+        }
+        th, td {
+            border : 1px solid yellowgreen;
+        }
+        th {
+            background-color: orange;
+        } 
+        caption {
+            font-size: 2em; color: blueviolet;
+        }
+    </style>
+
+    <title>테이블(표) 만들기</title>
+</head>
+<body>
+    <!-- table 태그는 표의 시작과 끝을 알려주는 태그입니다. -->
+    <table>
+        <!-- 표의 제목을 표시합니다. -->
+        <caption>음료 가격</caption>
+        <!-- tr(table row) : 표의 행을 생성합니다. -->
+        <thead>
+            <tr>
+                <!-- th(table header) : 테이블의 제목을 표시 -->
+                <th>번호</th>
+                <th>상품</th>
+                <th>수량</th>
+                <th>가격</th>
+                <th>세금</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>콜라</td>
+                <td>5개</td>
+                <td>1,400원</td>
+                <td>포함</td>
+            </tr>
+            <tr>
+                <!-- rowspan : 열을 통합 -->
+                <td>2</td>
+                <td>사이다</td>
+                <td>3개</td>
+                <td rowspan="2">1,000원</td>
+                <td>미포함</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>미린다</td>
+                <td>2개</td>
+                <td>포함</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- colspan : 행을 통합 -->
+                <td>총 금액</td>
+                <td colspan="4">2,400원</td>
+            </tr>
+         </tfoot>
+    </table>
+</body>
+</html>

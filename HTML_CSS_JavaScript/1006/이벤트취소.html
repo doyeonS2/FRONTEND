@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>이벤트 취소하기</title>
+</head>
+<body>
+    <a href="https://www.naver.com">네이버 이동</a>
+    <a href="https://www.daum.net">다음 이동</a>
+    <script>
+        const aEls = document.querySelectorAll("a");
+        for(let i = 0; i < aEls.length; i++) {
+            aEls[i].addEventListener("click", function(e) {
+                e.preventDefault(); // 기본 이벤트 취소
+            });
+        }
+    </script>
+</body>
+</html>

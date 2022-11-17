@@ -1,0 +1,41 @@
+section {
+    width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+p {
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+article {
+    float: left;
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid darkgray;
+}
+
+footer {
+    clear: left;
+    width: 95.5%;
+    height: 50px;
+    background-color: #222;
+    margin: 10px;
+}
+
+footer > p {
+    color: #eee;
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 10px;
+}   

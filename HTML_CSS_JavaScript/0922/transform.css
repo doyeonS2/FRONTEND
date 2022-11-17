@@ -1,0 +1,25 @@
+/* transform : 물체의 크기나 형태, 위치를 바꾸는 것 */
+/* 2d 및 3d도 지원함 */
+/* translate(x, y), translateX(n), translateY(n) : 이동 관련 */
+/* scale(x, y), scaleX(n), scaleY(n) : 확대 및 축소(크기 관련) */
+/* skew(xdeg, ydeg), skewX(deg), skewY(deg) : 기울임 정도 */
+/* rotate(deg) : 주어진 각도만큼 회전 */
+/* transform-origin : 축을 바꿈 */
+div {
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+    /* background-color: orangered; */
+    background: linear-gradient(45deg, yellow, green);
+    transition: 2s, .2s;
+}
+
+div:hover {
+    /* transform: translate3d(100px, 200px); */
+    /* transform: scale(2, 2); */
+    /* transform: skew(20deg, 30deg); /* 기울이기 */
+    /* transform: skewY(-30deg); */
+    transform: rotate(90deg); /* 회전 */
+    transform-origin: top left; /* 축을 바꿈 */
+    transform-origin: bottom left;
+}

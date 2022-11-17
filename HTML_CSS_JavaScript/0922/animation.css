@@ -1,0 +1,65 @@
+/* 애니메이션 : CSS3 추가된 기능이며 전환 효과보다 정확하고 부드럽게 전환됨 */
+/* @keyframes <키 프레임명> */
+/* animation-name : <키 프레임명>; */
+/* animation-duration : <지속 시간>; */
+
+/* div {
+    width: 100px;
+    height: 100px;
+    border-color: red;
+    animation-name: bgchange;
+    animation-duration: 5s;
+}
+
+@keyframes bgchange {
+    0% {background-color: red;}
+    25% {background-color: orange;}
+    50% {background-color: yellow;}
+    100% {background-color: green;}
+} */
+
+#container {
+    width: 500px;
+    margin: 20px auto;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 50px;
+}
+#box1 {
+    background-color: lightgreen;
+    border: 1px solid transparent;
+    animation-name: shape;
+    animation-duration: 3s;
+    /* animation-iteration-count: 5; 반복 횟수 */
+    animation-iteration-count: infinite; /* 끝 없이 계속 반복 */ 
+
+}
+#box2 {
+    background-color: royalblue;
+    border: 1px solid transparent;
+    animation-name: rotate;
+    animation-duration: 3s;
+    /* animation-iteration-count: 5; */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shape {
+    from {
+        border: 1px solid transparent;
+    }
+    to {
+        border: 10px solid yellowgreen;
+        border-radius: 50%;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1000deg);
+    }
+}

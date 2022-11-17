@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>노드 추가하기</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+        // 노드 추가하기
+        const aEl = document.createElement("a"); // a 태그를 만들고
+        document.body.appendChild(aEl); // 갖다 붙임
+        const test = document.querySelector("a");
+        test.innerHTML = "테스트";
+        test.setAttribute("href", "http://naver.com");
+        // 노드 삭제하기
+        document.body.removeChild(aEl);
+    </script>
+</body>
+</html>

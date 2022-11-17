@@ -1,0 +1,40 @@
+* {
+    /* 패딩과 보더라인 두께까지를 내가 설정한 영역에 포함하겠다!(마진은 제외^^) */
+    box-sizing: border-box; 
+}
+
+#container {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+input[type="text"] {
+    width: 370px;
+    float: left;
+    height: 30px;
+    padding-left: 30px;
+}
+
+button {
+    width: 90px;
+    height: 30px;
+    float: right;
+    background-color: #222;
+    color: white;
+    border: none;
+}
+
+hr {
+    clear: both;
+    display: none;
+}
+
+ul {
+    list-style: none;
+    padding-top: 50px;
+}
+
+li {
+    line-height: 1.6;
+}

@@ -1,0 +1,38 @@
+#container {
+    display: grid;
+    width: 700px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+}
+
+.box {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    background-color: cornflowerblue;
+    grid-column: 1/4;
+}
+
+.box2 {
+    background-color: darkcyan;
+    grid-row: 2/4;
+}
+
+.box3 {
+    background-color: coral;
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+.box4 {
+    background-color: khaki;
+    grid-column: 3;
+    grid-row: 3;
+}

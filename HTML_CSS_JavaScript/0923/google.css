@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#login { 
+    width: 304px; 
+    height: 390px;
+    padding: 28px 38px;
+    border: 1px solid black;
+    margin: 100px auto;
+}
+
+#login fieldset {
+    border: none;
+}
+
+#login fieldset legend{
+    position:absolute;
+    top:-99999px;;
+}
+
+#login button {
+    width: 228px; 
+    height: 44px;
+    border: 1px solid black;
+    background-color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login input {
+    width: 228px; 
+    height: 44px;
+    border: 1px solid lightgray;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+#login > p {
+    margin: 24px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+#login button[type="submit"] {
+    background-color:#373f3c ;
+    color:white;
+    margin-bottom:27px;
+    font-weight:normal;
+}
+
+#login a {
+    text-decoration: none;
+    color: #2C3432;
+    font-size: 14px;
+    text-align: center;
+    display: block; 
+    /* a태그는 인라인 요소이기 떄문에 글자 크기 만큼만 영역을 잡음. 
+    따라서 중간 정렬하기 위해서는 block 요소로 바꿔줘야 함 */
+}
+

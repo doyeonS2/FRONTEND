@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>창 이동 시키기</title>
+    <style>
+        body {
+            width: 5000px;
+            height: 5000px;
+        }
+        button {
+            /* position: fixed; */
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="sTo()">scrollTo(100, 200)</button> 
+    <button onclick="sBy()">scrollBy(100, 200)</button>
+    <script>
+        function sTo() { 
+            // window.scrollTo(100, 200);
+            window.scrollTo({left: 100, top: 0}); // 절대좌표, 고정된 좌표에서 이동
+        }
+        function sBy() {
+            // window.scrollBy(100, 200);
+            window.scrollBy({left: 100, top: 0}); // 현재 위치에서 이동
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>클릭 이벤트</title>
+</head>
+<body>
+    <button>클릭</button>
+    <script>
+        const btnEl = document.querySelector("p");
+        btnEl.addEventListener("click", function(e) {
+            console.log(`clientX : ${e.clientX}`); // 마우스가 클릭된 X축 좌표
+            console.log(`clientY : ${e.clientY}`);
+            console.log(`pageX : ${e.pageX}`);
+            console.log(`pageY : ${e.pageY}`);
+            console.log(`screenX : ${e.screenX}`);
+            console.log(`screenY : ${e.screenY}`);
+        });
+    </script>
+</body>
+</html>

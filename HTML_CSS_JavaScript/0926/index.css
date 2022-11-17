@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    height: 100vh;
+    row-gap: 10px; /* 행에 갭 주기 */
+    column-gap: 2px; /* 열에 갭 주기 */
+    grid-template-columns: 1fr 1fr 1fr; /* fr : 비율 단위 */
+    grid-template-columns: repeat(3, 1fr); /* 3개를 반복하겠다, 1fr로! */
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 100픽셀 이하로는 안줄이겠다! */
+    grid-template-rows: 200px 1fr 200px;
+}
+
+.grid-item {
+    color: white;
+    background-color: royalblue;
+}
+.grid-item:nth-child(2n) {
+    background-color: orangered;
+}

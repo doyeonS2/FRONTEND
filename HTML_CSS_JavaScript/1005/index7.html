@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>form 태그 선택하기</title>
+</head>
+<body>
+    <form name="frm">
+        <!-- checkbox : 여러 개 선택할 수 있따요~! -->
+        <label><input type="checkbox" value="apple">사과</label>
+        <label><input type="checkbox" value="banana">바나나</label>
+        <label><input type="checkbox" value="orange">오렌지</label>
+        <label><input type="checkbox" value="melon">멜론</label>
+
+        <br>
+
+        <!-- radio : 딱 하나만 선택할 수 있다구!!^ㅠ^ -->
+        <!-- name="fruits"로 묶어서 하나만 선택할 수 있게 해줌!! -->
+        <label><input type="radio" value="apple" name="fruits">사과</label>
+        <label><input type="radio" value="banana" name="fruits">바나나</label>
+        <label><input type="radio" value="orange" name="fruits">오렌지</label>
+        <label><input type="radio" value="melon" name="fruits">멜론</label>
+    <script>
+        // checkbox
+        const checkEls = document.querySelectorAll("[type='checkbox']")
+        for(let i = 0; i < checkEls.length; i++) {
+            if(i % 2 == 0) checkEls[i].checked = true;
+        }
+
+        // radio
+        const radioEls = document.querySelectorAll("[type='radio']")
+        for(let i = 0; i < radioEls.length; i++) {
+            // 바나나가 디폴트로 선택되어 있게 해줌
+            if(radioEls[i].value === "banana") { 
+                radioEls[i].checked = true;
+            }
+        }
+        
+    </script>
+</body>
+</html>

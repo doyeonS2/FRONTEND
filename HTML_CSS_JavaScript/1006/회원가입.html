@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 페이지 만들기</title>
+    <style>
+        * {
+            box-sizing: border-box;    
+        }
+
+        body {
+            display: block;
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: solid 1px grey;
+        }
+
+        #text {
+            background-color:aliceblue;
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 30px;
+            width: 300px;
+        }
+        #button_id {
+            width: 80px;
+            height: 25px;  
+        }
+
+        #join {
+            width: 100px;
+            height: 50px;    
+            margin: 8px 50px 10px 100px;
+            display: block;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            border: solid 2px darkgrey;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body> 
+    <h1>회원가입</h1>
+    <hr>
+    <div id="container">
+        <b>아이디</b><br>
+        <input id="text" type="text" class="id" name="ID" check_result="fail" required placeholder="대문자,소문자,숫자 포함 8자 이상 20자리 이하">
+        <button id="button_id" onclick="id_check()">중복검사</button><br><br>
+        <img id="id_check_success" style="display: none;">
+        <b>비밀번호</b><br>
+        <input id="text" type="password" name="pw" placeholder="대문자,소문자,특수문자,숫자 포함 8자리~20자리"><br><br>
+        <b>비밀번호 확인</b><br>
+        <input id="text" type="password" name="pwCheck" placeholder="비밀번호 확인"><br><br>
+        <b>전화번호</b><br>
+        <input id="text" type="text" name="phone" placeholder="전화번호 입력"><br><br>
+        <b>이메일</b><br>
+        <input id="text" type="email" name="email" placeholder="E-mail 입력"><br>
+        <input type="checkbox"> email 수신 동의 <br><br>
+        <button id="join">가입하기</button>
+
+    </div>
+    <script>
+        function signUpCheck(){
+            let id = document.getElementById("id").value;
+            let pw = document.getElementById("pw").value;
+            let pwCheck = document.getElementById("pwCheck").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            
+            
+
+
+    </script>
+    
+    
+</body>
+</html>

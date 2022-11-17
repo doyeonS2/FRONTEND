@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버튼 클릭 시 배경색 바꾸기</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #container {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            gap: 5px;
+        }
+        .green {
+            background-color: green;
+            color: white;
+            width: 150px;
+            height: 60px;
+            border: none;
+        }
+        .orange {
+            background-color: orange;
+            color: white;
+            width: 150px;
+            height: 60px;
+            border: none;
+        }
+        .purple {
+            background-color: purple;
+            color: white;
+            width: 150px;
+            height: 60px;
+            border: none;
+        }
+    </style>
+</head>
+<body>   
+    <ul id="container">
+        <button class="green"><a onclick="backChange('green')">Green</a></button>
+        <button class="orange"><a onclick="backChange('orange')">Orange</a></button>
+        <button class="purple"><a onclick="backChange('purple')">Purple</a></button>
+    </ul>
+    <script>
+        function backChange(color) {
+            let container = document.querySelector('#container');
+			container.style.backgroundColor = color;
+		}
+    </script>
+</body>
+</html>

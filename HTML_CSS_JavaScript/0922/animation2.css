@@ -1,0 +1,21 @@
+/* animation-fill-mode : 애니메이션이 끝난 후 원래 상태로 돌아가지 않고 현재 상태로 유지*/
+/* none : 실행 전 상태로 돌아감 */
+/* forward : 종료시점의 스타일을 유지 */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    position: relative;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; /* 일시정지 상태로 만듦 */
+}
+@keyframes move {
+    from {
+        left: 0;
+    }
+    to {
+        left: 300px;
+    }
+}

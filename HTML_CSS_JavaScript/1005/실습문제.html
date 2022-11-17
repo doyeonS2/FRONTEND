@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버튼을 클릭하면 경고창 출력하기</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #container {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            gap: 5px;
+        }
+        .green {
+            background-color: green;
+            color: white;
+            width: 150px;
+            height: 60px;
+            border: none;
+        }
+        .orange {
+            background-color: orange;
+            color: white;
+            width: 150px;
+            height: 60px;
+            border: none;
+        }
+        .purple {
+            background-color: purple;
+            color: white;
+            width: 150px;
+            height: 60px;
+            border: none;
+        }
+    </style>
+</head>
+<body>   
+    <ul id="container">
+        <button class="green"><a onclick="alert('버튼을 클릭했습니다!!')">Green</a></button>
+        <button class="orange"><a onclick="alert('버튼을 클릭했습니다!!')">Orange</a></button>
+        <button class="purple"><a onclick="alert('버튼을 클릭했습니다!!')">Purple</a></button>
+    </ul>
+</body>
+</html>

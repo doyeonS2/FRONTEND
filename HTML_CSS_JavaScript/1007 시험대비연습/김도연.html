@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 김도연 포트폴리오</title>
+    <style>
+        #container {
+            margin: 50px auto;
+            padding: 40px 30px 10px 0;
+            width: 550px;
+            height: 550px;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid lightgray;
+        }
+        ul, li {
+            list-style: none;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        ul {
+            float: right;
+            margin-right: 30px;
+        }
+        li {
+            margin-top : 20px;
+            
+        }
+        input {
+            border-style: none;
+            border-bottom: 2px dashed black;
+            background-color: whitesmoke;
+            height: 2rem;
+            text-align: center;
+            width: 330px;
+        }
+        h1 {
+            font-size: 20px;
+            display: inline;
+            float: left;
+        }
+        button {
+            width: 500px;
+            height: 80px;
+            font-weight: 800;
+            color:darkgreen;
+            background-color: rgb(188, 226, 169);
+            border-style: none;
+            margin: 20px auto;
+            font-size: large;
+        }
+        p {
+        text-align: right;
+        font-size: 0.6em;
+        }
+        #email {
+            width: 157px;
+        }
+        #idMsg, #pwMsg, #pw2Msg {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div action="#">
+        <div id="container">
+            <ul>
+                <li><h1>아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1><input type="text" id="id" onblur="check_id()"></li>
+                <p id="idMsg">&nbsp;</p>
+                <li><h1>패스워드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1><input type="text" id="password" onclick="check_pwd()" onblur="check_pw()"></li>
+                <p id="pwMsg">&nbsp;</p><p id="pwMsg2"></p>
+                <li><h1>패스워드 확인&nbsp;&nbsp;</h1><input type="text" id="password2" onblur="check_pw2()"></li>
+                <p id="pw2Msg">&nbsp;</p> 
+                <li><h1>이메일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1><input type="text" id="email" onblur="check_email()">@<input type="text" id="email" onblur="check_email2()"> </li>
+                <p id="email">&nbsp;</p>
+                <li><h1>주소&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1><input type="text" id="addr" onblur="check_addr()"></li>
+                <p id="addr">&nbsp;</p>
+                <li><button type="submit">가 입</button></li>
+            </ul>
+        </div>
+    </div>
+    <script> 
+        function check_pwd() {
+        pwMsg2.innerHTML = "영문자 대/소문자 특수문자, 숫자 포함 8~ 32자";
+            }
+        function check_id() {
+            if(id.value == '') {
+                idMsg.innerHTML = "필수 입력 항목 입니다"
+            } else idMsg.style.display = 'none';
+        }
+        function check_pw() {
+            if(password.value == '') {
+                pwMsg.innerHTML = "필수 입력 항목 입니다"
+            } else pwEr.style.display = 'none';
+        }
+        function check_pw2() {
+            if(password.value == '') {
+                pw2Msg.innerHTML = "필수 입력 항목 입니다"
+            } else pwEr.style.display = 'none';
+        }
+        </script>
+</body>
+</html>

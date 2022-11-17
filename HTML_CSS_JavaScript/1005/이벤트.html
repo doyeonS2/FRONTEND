@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>이벤트</title>
+</head>
+<body>
+    <input id="input_box" type="text" onfocus="FocusEvent()" onblur="blurEvent()">
+    <script>
+        function FocusEvent() {
+            let inputBox = document.querySelector("#input_box");
+            inputBox.style.background = "orange";
+        }
+        function blurEvent() {
+            let inputBox = document.querySelector("#input_box");
+            inputBox.style.background = "green";
+        }
+    </script>
+</body>
+</html>

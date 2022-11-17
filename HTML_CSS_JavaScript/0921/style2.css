@@ -1,0 +1,73 @@
+/* solid dashsd dotted */
+/* box-shadow : 수평거리 수직거리 흐림정도 번짐정도 색상 */
+
+p {
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin: 10px 0 ;
+    /* display: block; */
+    display: inline-block;
+    border-width: 5px;
+    border-style: solid;
+    border-color: pink;
+    background-color: antiquewhite;
+    background-image: url('/images/beach.jpg'); 
+    border-radius: 20px 20px 0 0; /* 테두리 둥글게 */
+    box-shadow: 1px 2px 3px 3px gray;
+}
+
+/* cover : 세로 비율을 유지하면서 화면을 채움 */
+/* contain : 가로, 세로 비율을 유지하면서 확대하거나 축소 */
+div {
+    width: 80px; /* 원본 크기가 160px */
+    height: 50px; /* 원본 크기가 120px */
+    background-color: bisque;
+    /* background-image: url('/images/coffee.jpg'); */
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    background-size: contain;
+}
+.box {
+    width: 100px;
+    height: 100px;
+}
+/* position 속성이 없는 경우 기본적으로 static 속성을 가짐 */
+.red-box {
+    background-color: red;
+}
+.green-box {
+    background-color: green;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+.blue-box {
+    background-color: blue;
+}
+
+/* 요소의 좌표 속성에 따라 배치 */
+.container {
+    width: 300px;
+    background-color: royalblue;
+    position:relative;
+}
+.container .item {
+    border: 4px dashed red;
+    background-color: orange;
+}
+/* absoulute : 위치상의 부모가 relative 속성을 가지고 있어야 함 */
+/* 위치상의 부모가 relative 속성이 없으면 html 요소 기준으로 설정됨 */
+.container .item:nth-child(2) {
+    width: 140px;
+    height: 70px;
+    position: absolute;
+    background-color: red;
+    top: 30px;
+    left: 30px;
+}
+.container .item:nth-child(3) {
+    width: 70px;
+    
+}

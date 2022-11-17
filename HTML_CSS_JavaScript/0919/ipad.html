@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1><b>아이패드 주문하기</b></h1>
+    <fieldset>
+        <legend>배송 정보</legend>
+        <p><label for="product">주문 상품</label>
+        <input type="text" name="product" id="product" value="아이패드 12.9인치"></p>
+        <p><label for="name">이름</label>
+            <input type="text" name="name" id="name" autofocus></p>
+        <p><label for="addr">배송 주소</label>
+            <input type="text" name="addr" id="addr" required></p>
+        <p><label for="email">이메일</label>
+            <input type="text" name="email" id="email"></p>
+        <p><label for="tel">연락처</label>
+            <input type="text" name="tel" id="tel" placeholder="하이픈 빼고 입력해 주세요.(01012345678)"></p>
+        <p><label>배송 지정</label>
+            <input type="datetime-local">(주문일로부터 최소 3일 이후)</p>
+    </fieldset>
+    <button type="submit" id="btn">주문하기</button>
+    <button type="reset" id="btn">취소하기</button>
+
+</body>
+</html>

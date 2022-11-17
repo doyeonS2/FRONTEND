@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://google.co.kr" method="get">
+        <!-- value : 초기값을 넣는 것, placeholder : 힌트를 주는 것 -->
+        <fieldset>
+            <legend>기본 정보</legend>
+            <p>
+                <label for="id">아이디</label>
+                <input type="text" name="id" id="id" value="jks2024">
+            </p>
+
+                <label for="password">패스워드</label>
+        <input type="password" name="pwd" id="password">
+        </fieldset>
+
+        <fieldset>
+            <legend>세부 정보</legend>
+            <p>
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email" placeholder="@를 넣어야합니다.">
+            </p>
+            <p>
+                <label for="tel">전화번호</label>
+                <input type="tel" name="tel" id="tel" placeholder="하이픈을 넣지 마세요.">
+            </p>
+        </fieldset>
+            
+        <fieldset>
+            <legend>성별</legend>
+            <p>
+                <label for="male">남성</label>
+                <input type="radio" name="gender" id="male">
+                <label for="female">여성</label>
+                <input type="radio" name="gender" id="female">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>주소 입력</legend>
+            <lable for="city">도시</lable>
+            <!-- multiple : ctrl 누르면 여러개 선택 가능 -->
+            <!-- <select name="city" id="city" multiple> -->
+
+            <select name="city" id="city" >
+                <optgroup label="서울시">
+                    <option value="강남구">강남구</option>
+                    <option value="서초구">서초구</option>
+                    <option value="강동구">강동구</option>
+                    <option value="영등포구">영등포구</option>
+                    <option value="용산구">용산구</option>
+                    <option value="중구">중구</option>
+                    <option value="강북구">강북구</option>
+                </optgroup>
+                <optgroup label="경기도">
+                    <option value="성남시">성남시</option>
+                    <option value="수원시">수원시</option>
+                    <option value="용인시">용인시</option>
+                    <option value="안양시">안양시</option>
+                    <option value="화성시">화성시</option>
+                    <option value="과천시">과천시</option>
+                    <option value="시흥시">시흥시</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>취미를 선택하세요.</legend>
+            <p>
+                <!-- checked : 선택하지 않을 경우, 기본으로 선택되어 있게! -->
+                <label for="운동">운동</label>
+                <input type="radio" name="sports" id="운동" checked>
+                <label for="음악">음악</label>
+                <input type="radio" name="music" id="음악">
+                <label for="그림">그림</label>
+                <input type="radio" name="pic" id="그림">
+
+            </p>
+        </fieldset>
+
+        <!-- desable : 상호작용 요소를 비활성화(텍스트를 입력할 수 없음) -->
+        <!-- readonly : 상호작용 요소를 비활성화 + 읽기 전용으로 변경 -->
+        <p>아이디<input type="text" name="id" value="jks2024" disable></p>
+        <label>아이디<input type="text" name="id" value="jks2024" readonly></label>
+
+        <p>
+            <label for="id">아이디</label>
+            <input type="text" name="id" id="id" value="jks2024">
+        </p>
+
+        <br>
+
+        <!-- required : 생략할 수 없게끔! -->
+        <p>패스워드<input type="password" name="pwd" required ></p>
+
+        <label for="password">패스워드</label>
+        <input type="password" name="pwd" id="password">
+
+        <br>
+
+        <p>이메일<input type="email" name="email" placeholder="@를 넣어야합니다."></p>
+
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" placeholder="@를 넣어야합니다.">
+        
+        <br>
+
+        <p>전화번호<input type="tel" name="tel" placeholder="하이픈을 넣지 마세요."></p>
+
+        <label for="tel">전화번호</label>
+        <input type="tel" name="tel" id="tel" placeholder="하이픈을 넣지 마세요.">
+
+        <br>
+
+        <p>나이<input type="number" name="age"></p>
+
+        <label for="age">나이</label>
+        <input type="number" name="age" id="age">
+
+        <br>
+
+        <p>주소<input type="text" name="addr" value="서울시 "></p>
+        <p>남성<input type="radio" name="gender" id="male"></p>
+        <p>여성<input type="radio" name="gender" id="female"></p>
+
+        <label for="male">남성</label>
+        <input type="radio" name="gender" id="male">
+        <label for="female">여성</label>
+        <input type="radio" name="gender" id="female">
+
+        <p>직업<input type="text"></p>
+
+        <label for="student">학생</label>
+        <input type="radio" name="jobs" id="student">
+        <label for="worker">회사원</label>
+        <input type="radio" name="jobs" id="worker">
+        <label for="housewife">주부</label>
+        <input type="radio" name="jobs" id="housewife">
+        <label for="none">무직</label>
+        <input type="radio" name="jobs" id="none">
+
+        
+        <p>가입일<input type="date"></p>
+
+        <label for="desc">소개글</label>
+        <p>
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+        </p>
+
+        <button>제출</button>
+
+        <br>
+
+        <input type="submit" value="제출">
+        <input type="reset" value="초기화">
+    
+        <br>
+        
+        <button type="submit">제출</button>
+        <button type="reset">초기화</button>
+        
+        <br>
+
+        <!-- 버튼 타입에는 중간에 아이콘 등을 넣어줄 수 있기 때문에 
+            버튼 타입을 쓰는 것이 더 적합 -->
+        <button type="submit">
+            <img src="/images/bear.png" width="30" alt="곰돌이">제출
+        </button>
+        <button type="reset">
+            <img src="/images/bear.png" width="30" alt="곰돌이">초기화
+        </button>
+
+    </form>
+    
+</body>
+</html>

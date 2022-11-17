@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>이벤트</title>
+</head>
+<body>
+    <button>클릭</button>
+    <script>
+        const btnEl = document.querySelector("button");
+        // btnEl.addEventListener("click", function() {
+        //     alert("버튼이 눌렸습니다.");
+        // });
+        const clickEvent = () => alert("화살표 함수로 버튼 클릭");
+        btnEl.addEventListener("click", clickEvent);
+    </script>
+</body>
+</html>

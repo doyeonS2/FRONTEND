@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+}
+.grid-container {
+    display: grid;
+    width: 700px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "footer footer footer"
+
+    ;
+}
+.grid-item {
+    color: white;
+    padding: 10px;
+}
+#header {
+    grid-area: header;
+    background-color: royalblue;
+}
+#sidebar {
+    grid-area: sidebar;
+    background-color: yellowgreen;
+}
+
+#content {
+    grid-area: content;
+    background-color: orangered;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: darkviolet;
+}

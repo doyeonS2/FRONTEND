@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>form 태그 선택하기</title>
+</head>
+<body>
+    <form name="frm">
+        <input type="file" name="upload">
+    </form>
+    <script>
+        const fileEl = document.frm.upload.files;
+        console.log("Test : " + fileEl);
+        
+    </script>
+</body>
+</html>

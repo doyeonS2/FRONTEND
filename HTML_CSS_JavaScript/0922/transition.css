@@ -1,0 +1,57 @@
+/* .red-box {
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+    color: palegreen;
+    /* transition: 1s .5s; 
+    transition-property: background-color, color, width;
+    transition-duration: 1s;
+    transition-delay: .3s;
+
+} 
+
+/* 동적 가상 선택자 
+.red-box:hover {
+    background-color: royalblue;
+    color: yellow;
+    width: 300px;
+} */
+
+#container {
+    padding: 10px;
+    color: white;
+    border: 1px solid black;
+}
+
+.bar {
+    width: 100px;
+    background-color: orangered;
+    transition-property: width;
+    transition-duration: 1s;
+    margin-bottom: 10px;
+    padding: 2px 6px;
+    text-align: left;
+}
+
+#container:hover .bar {
+    width: 200px;
+}
+
+.bar:nth-child(1) {
+    transition-timing-function: linear;
+}
+.bar:nth-child(2) {
+    transition-timing-function: ease;
+}
+.bar:nth-child(3) {
+    transition-timing-function: ease-in;
+}
+.bar:nth-child(4) {
+    transition-timing-function: ease-out;
+}
+.bar:nth-child(5) {
+    transition-timing-function: ease-in-out;
+}
+.bar:nth-child(6) {
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
